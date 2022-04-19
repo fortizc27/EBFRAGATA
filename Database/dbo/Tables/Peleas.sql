@@ -1,0 +1,18 @@
+﻿CREATE TABLE [dbo].[Peleas]
+(
+	[IdPelea] INT IDENTITY(1,1) NOT NULL,
+	[IdAtleta] NUMERIC(20) NOT NULL,
+	[Nombre] VARCHAR(50) NOT NULL,
+	[Fecha] DATE NOT NULL,
+	[Descripcion] VARCHAR(255) NOT NULL,
+	[Contrincante] VARCHAR(50) NULL,
+	[Decision] VARCHAR(50) NULL,
+	[Observaciones] VARCHAR(255) NULL
+
+	CONSTRAINT [PK_TablePeleas] PRIMARY KEY CLUSTERED 
+	(
+		[IdPelea] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY], 
+    CONSTRAINT [FK_TablePeleas_ToClientes] FOREIGN KEY ([IdAtleta]) REFERENCES [Clientes]([IdCliente])
+) ON [PRIMARY]
+GO

@@ -1,0 +1,29 @@
+﻿CREATE TABLE [dbo].[FichasTecnicas]
+(
+	[IdFicha] BIGINT IDENTITY(1,1) NOT NULL,
+	[Fecha] DATE NOT NULL,
+	[IdAtleta] NUMERIC(20) NOT NULL,
+	[Nombre] VARCHAR(50) NOT NULL,
+	[Padecimientos] VARCHAR(255) NOT NULL,
+	[Peso] DECIMAL NOT NULL,
+	[Altura] DECIMAL NOT NULL,
+	[Lateralidad] VARCHAR(20) NULL,
+	[Alcance] DECIMAL NULL,
+	[Talla] VARCHAR(10) NULL,
+	[Pecho] DECIMAL NULL,
+	[Abdomen] DECIMAL NULL,
+	[Gluteo] DECIMAL NULL,
+	[BicepD] DECIMAL NULL,
+	[BicepI] DECIMAL NULL,
+	[MusloD] DECIMAL NULL,
+	[MusloI] DECIMAL NULL,
+	[PantorrillaD] DECIMAL NULL,
+	[PantorrillaI] DECIMAL NULL
+
+	CONSTRAINT [PK_TableFichasTecnicas] PRIMARY KEY CLUSTERED 
+	(
+		[IdFicha] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY], 
+    CONSTRAINT [FK_TableFichasTecnicas_ToClientes] FOREIGN KEY ([IdAtleta]) REFERENCES [Clientes]([IdCliente])
+) ON [PRIMARY]
+GO
