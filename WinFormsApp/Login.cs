@@ -33,28 +33,40 @@ namespace WinFormsApp
                     Clave = txtClave.Text
                 });
 
-                var bitacora = new BitacorasEntity
+                if (result !=null)
                 {
-                    Usuario = txtUsuario.Text,
-                    Registro = DateTime.Now,
-                    Accion = "LOGIN."
-                };
-
-                if (result.CodeError == 0)
-                {
-                    var usuario = IApp.usuariosService.GetById(new UsuariosEntity
+                    var bitacora = new BitacorasEntity
                     {
-                        Usuario = txtUsuario.Text
-                    });
-                    //Escribe en bitacora
-                    IApp.bitacorasService.Create(bitacora);
-                    this.Hide();
-                    var MenuPrincipal = new MenuPrincipal(txtUsuario.Text, result.Rol);
-                    MenuPrincipal.Show();
+                        Usuario = txtUsuario.Text,
+                        Registro = DateTime.Now,
+                        Accion = "LOGIN."
+                    };
+
+                    if (result.CodeError == 0)
+                    {
+                        var usuario = IApp.usuariosService.GetById(new UsuariosEntity
+                        {
+                            Usuario = txtUsuario.Text
+                        });
+                        //Escribe en bitacora
+                        IApp.bitacorasService.Create(bitacora);
+                        this.Hide();
+                        var MenuPrincipal = new MenuPrincipal(txtUsuario.Text, result.Rol);
+                        MenuPrincipal.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.MsgError);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(result.MsgError);
+                    if (MessageBox.Show("No hay conexion de BD. ¿Desea modificar la conexion?", "BD ERROR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DBConnection dBConnection = new DBConnection();
+                        dBConnection.ShowDialog();
+                    }
+                    
                 }
             }
             catch (Exception ex)

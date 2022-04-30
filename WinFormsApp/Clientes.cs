@@ -226,13 +226,13 @@ namespace WinFormsApp
         private void btnFichaTecnica_Click(object sender, EventArgs e)
         {
             var fichaTecnica = new FichaTecnica(txtCedula.Text,txtNombre.Text);
-            fichaTecnica.Show();
+            fichaTecnica.ShowDialog();
         }
 
         private void btnPeleas_Click(object sender, EventArgs e)
         {
             var peleas = new Peleas(txtCedula.Text, txtNombre.Text);
-            peleas.Show();
+            peleas.ShowDialog();
         }
 
         public bool ValidacionFormulario()

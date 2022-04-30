@@ -15,15 +15,18 @@ namespace BL
         IEnumerable<UsuariosEntity> GetLista();
         UsuariosEntity Login(UsuariosEntity entity);
         BDEntity Update(UsuariosEntity entity);
+        bool Connection(string conn);
     }
 
     public class UsuariosService : IUsuariosService
     {
         public IDataAccess sql { get; set; }
+        public IDataAccessConnection sqlconn { get; set; }
 
         public UsuariosService()
         {
             sql = new DataAccess();
+            sqlconn = new DataAccess();
         }
 
         public IEnumerable<UsuariosEntity> Get()
@@ -147,6 +150,22 @@ namespace BL
                 });
 
                 return result;
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool Connection (string conn)
+        {
+            try
+            {
+                return sqlconn.TestConnection(conn);
             }
             catch (Exception)
             {

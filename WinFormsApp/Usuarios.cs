@@ -46,6 +46,12 @@ namespace WinFormsApp
                         IdUsuario = IdSelected
                     });
 
+                    chbHabilitar.Enabled = true;
+                    if (IdSelected == 1 || result.Usuario == MenuPrincipal.nombreUsuario)
+                    {
+                        chbHabilitar.Enabled = false;
+                    }
+
                     lblUsuarioId.Text = result.IdUsuario.ToString();
                     txtUsuario.Text = result.Usuario.ToString();
                     txtClave.Text = result.Clave.ToString();
@@ -78,30 +84,37 @@ namespace WinFormsApp
 
                 if (IdSelected.HasValue)
                 {
-                    //Verifica si en realidad queremos eliminar este paciente
-                    if (DialogResult.Yes == MessageBox.Show("¿Estás seguro de eliminar este usuario?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                    if (IdSelected == 1)
                     {
-                        var result = IApp.usuariosService.Delete(new UsuariosEntity()
+                        MessageBox.Show("No se puede eliminar este usuario.");
+                    }
+                    else
+                    {
+                        //Verifica si en realidad queremos eliminar este usuario
+                        if (DialogResult.Yes == MessageBox.Show("¿Estás seguro de eliminar este usuario?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                         {
-                            IdUsuario = IdSelected
-                        });
-
-                        if (result.CodeError == 0)
-                        {
-                            var bitacora = new BitacorasEntity
+                            var result = IApp.usuariosService.Delete(new UsuariosEntity()
                             {
-                                Usuario = MenuPrincipal.nombreUsuario,
-                                Registro = DateTime.Now,
-                                Accion = ("ELIMINACION DE USUARIO: " + IdSelected.ToString() + ".").ToUpper()
-                            };
+                                IdUsuario = IdSelected
+                            });
 
-                            IApp.bitacorasService.Create(bitacora);
-                            MessageBox.Show("El registro se elimino correctamente");
-                            CargarDatos();
-                        }
-                        else
-                        {
-                            throw new Exception(result.MsgError);
+                            if (result.CodeError == 0)
+                            {
+                                var bitacora = new BitacorasEntity
+                                {
+                                    Usuario = MenuPrincipal.nombreUsuario,
+                                    Registro = DateTime.Now,
+                                    Accion = ("ELIMINACION DE USUARIO: " + IdSelected.ToString() + ".").ToUpper()
+                                };
+
+                                IApp.bitacorasService.Create(bitacora);
+                                MessageBox.Show("El registro se elimino correctamente");
+                                CargarDatos();
+                            }
+                            else
+                            {
+                                throw new Exception(result.MsgError);
+                            }
                         }
                     }
                 }
@@ -199,7 +212,7 @@ namespace WinFormsApp
             errors.Add(ErrorProviderHelper(txtConfClave, errorProviderConfClave));
             errors.Add(ErrorProviderHelper(cbRol, errorProviderRol));
 
-            //Detect if any of the fields were left blank
+            //Detecta si algun campo se encuentra en blanco
             foreach (var item in errors)
             {
                 if (item == false)

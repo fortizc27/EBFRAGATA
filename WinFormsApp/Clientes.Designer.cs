@@ -222,7 +222,7 @@ namespace WinFormsApp
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(831, 590);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(787, 590);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // dgClientes
@@ -280,7 +280,7 @@ namespace WinFormsApp
             this.dgClientes.RowHeadersWidth = 42;
             this.dgClientes.RowTemplate.Height = 25;
             this.dgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgClientes.Size = new System.Drawing.Size(807, 536);
+            this.dgClientes.Size = new System.Drawing.Size(763, 536);
             this.dgClientes.TabIndex = 3;
             // 
             // Fecha
@@ -375,7 +375,7 @@ namespace WinFormsApp
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(12, 554);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(807, 33);
+            this.panel3.Size = new System.Drawing.Size(763, 33);
             this.panel3.TabIndex = 4;
             // 
             // btnEliminar
@@ -393,7 +393,7 @@ namespace WinFormsApp
             this.btnEliminar.IconColor = System.Drawing.Color.Crimson;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 18;
-            this.btnEliminar.Location = new System.Drawing.Point(720, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(676, 4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(85, 25);
             this.btnEliminar.TabIndex = 5;
@@ -417,7 +417,7 @@ namespace WinFormsApp
             this.btnEditar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 18;
-            this.btnEditar.Location = new System.Drawing.Point(633, 4);
+            this.btnEditar.Location = new System.Drawing.Point(589, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 25);
             this.btnEditar.TabIndex = 4;
@@ -441,7 +441,7 @@ namespace WinFormsApp
             this.btnNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 18;
-            this.btnNuevo.Location = new System.Drawing.Point(546, 4);
+            this.btnNuevo.Location = new System.Drawing.Point(502, 4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(81, 25);
             this.btnNuevo.TabIndex = 3;
@@ -510,7 +510,7 @@ namespace WinFormsApp
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.Location = new System.Drawing.Point(107, 1214);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(52, 49);
+            this.btnGuardar.Size = new System.Drawing.Size(96, 49);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -530,7 +530,7 @@ namespace WinFormsApp
             this.btnCerrarFormulario.IconColor = System.Drawing.Color.Crimson;
             this.btnCerrarFormulario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarFormulario.IconSize = 32;
-            this.btnCerrarFormulario.Location = new System.Drawing.Point(-50, -437);
+            this.btnCerrarFormulario.Location = new System.Drawing.Point(-6, -437);
             this.btnCerrarFormulario.Name = "btnCerrarFormulario";
             this.btnCerrarFormulario.Size = new System.Drawing.Size(28, 28);
             this.btnCerrarFormulario.TabIndex = 23;
@@ -622,9 +622,9 @@ namespace WinFormsApp
             this.panelAddEdit.Controls.Add(this.btnCerrarFormulario);
             this.panelAddEdit.Controls.Add(this.btnGuardar);
             this.panelAddEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelAddEdit.Location = new System.Drawing.Point(831, 59);
+            this.panelAddEdit.Location = new System.Drawing.Point(787, 59);
             this.panelAddEdit.Name = "panelAddEdit";
-            this.panelAddEdit.Size = new System.Drawing.Size(287, 590);
+            this.panelAddEdit.Size = new System.Drawing.Size(331, 590);
             this.panelAddEdit.TabIndex = 1;
             this.panelAddEdit.Visible = false;
             // 
@@ -661,7 +661,7 @@ namespace WinFormsApp
             this.btnCerrar.IconSize = 32;
             this.btnCerrar.Location = new System.Drawing.Point(219, 12);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(38, 24);
+            this.btnCerrar.Size = new System.Drawing.Size(82, 24);
             this.btnCerrar.TabIndex = 69;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);

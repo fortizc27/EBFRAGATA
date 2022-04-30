@@ -41,6 +41,11 @@ namespace WinFormsApp
 
                 if (IdSelected.HasValue)
                 {
+                    chbHabilitar.Enabled = true;
+                    if (IdSelected == 1 || IdSelected == MenuPrincipal.rolusuario)
+                    {
+                        chbHabilitar.Enabled = false;
+                    }
                     var result = IApp.rolesService.GetById(new RolesEntity()
                     {
                         IdRol = IdSelected
@@ -82,30 +87,37 @@ namespace WinFormsApp
 
                 if (IdSelected.HasValue)
                 {
-                    //Verifica si en realidad queremos eliminar este paciente
-                    if (DialogResult.Yes == MessageBox.Show("¿Estás seguro de eliminar este rol?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                    if (IdSelected == 1 || IdSelected == MenuPrincipal.rolusuario)
                     {
-                        var result = IApp.rolesService.Delete(new RolesEntity()
+                        MessageBox.Show("No se puede eliminar este rol.");
+                    }
+                    else
+                    {
+                        //Verifica si en realidad queremos eliminar este rol
+                        if (DialogResult.Yes == MessageBox.Show("¿Estás seguro de eliminar este rol?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                         {
-                            IdRol = IdSelected
-                        });
-
-                        if (result.CodeError == 0)
-                        {
-                            var bitacora = new BitacorasEntity
+                            var result = IApp.rolesService.Delete(new RolesEntity()
                             {
-                                Usuario = MenuPrincipal.nombreUsuario,
-                                Registro = DateTime.Now,
-                                Accion = ("ELIMINACION DE ROL: " + IdSelected.ToString() + ".").ToUpper()
-                            };
+                                IdRol = IdSelected
+                            });
 
-                            IApp.bitacorasService.Create(bitacora);
-                            MessageBox.Show("El registro se elimino correctamente");
-                            CargarDatos();
-                        }
-                        else
-                        {
-                            throw new Exception(result.MsgError);
+                            if (result.CodeError == 0)
+                            {
+                                var bitacora = new BitacorasEntity
+                                {
+                                    Usuario = MenuPrincipal.nombreUsuario,
+                                    Registro = DateTime.Now,
+                                    Accion = ("ELIMINACION DE ROL: " + IdSelected.ToString() + ".").ToUpper()
+                                };
+
+                                IApp.bitacorasService.Create(bitacora);
+                                MessageBox.Show("El registro se elimino correctamente");
+                                CargarDatos();
+                            }
+                            else
+                            {
+                                throw new Exception(result.MsgError);
+                            }
                         }
                     }
                 }
@@ -213,7 +225,7 @@ namespace WinFormsApp
 
             errors.Add(ErrorProviderHelper(txtRol, errorProviderNombre));
 
-            //Detect if any of the fields were left blank
+            //Detecta si algun campo se encuentra en blanco
             foreach (var item in errors)
             {
                 if (item == false)

@@ -8,7 +8,7 @@ using Entity;
 
 namespace BD
 {
-    public class DataAccess : IDataAccess
+    public class DataAccess : IDataAccess, IDataAccessConnection
     {
         public SqlConnection DbConnection => new SqlConnection(
 
@@ -227,6 +227,34 @@ namespace BD
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        //PRUEBA DE CONEXION DE LA BASE DE DATOS
+        public bool TestConnection(string conn)
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                try
+                {
+                    bool sqlconnection = false;
+                    connection.Open();
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        sqlconnection = true;
+                    }
+
+                    return sqlconnection;
+                }
+                catch (SqlException)
+                {
+
+                    return false;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
             }
         }
     }

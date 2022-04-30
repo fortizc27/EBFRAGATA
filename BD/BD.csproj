@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
     <Compile Include="IDataAccess.cs" />
+    <Compile Include="IDataAccessConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
