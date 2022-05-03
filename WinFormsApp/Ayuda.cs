@@ -7,7 +7,7 @@ namespace WinFormsApp
         public Ayuda()
         {
             InitializeComponent();
-            DocManual.LoadFile("C:/Program Files/FRAGATA/EBF/Manual de usuario - EBFRAGATA.pdf");
+            DocManual.LoadFile("Manual de usuario - EBFRAGATA.pdf");
         }
     }
 }

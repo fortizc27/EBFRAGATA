@@ -57,12 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1BBF19769656477F97D6CAD77F381E0B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2BC4FC3F815E2C2F849A1E19EF11FD7C"
         "OwnerKey" = "8:_69ADEF4884B7CE1BAE662A574EF6DBD3"
         "MsmSig" = "8:_UNDEFINED"
@@ -237,20 +231,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_54A379E2E2E1F362246176392C3957EA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E370CDC38C9547EDA48128CBFD1C2B91"
+        "MsmKey" = "8:_EB8A6B5DE9E44BA1AA34897864600599"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_367ABD75EE40EAE2A4B79A6F5B1E47D9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E370CDC38C9547EDA48128CBFD1C2B91"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -367,6 +361,12 @@
         "OwnerKey" = "8:_4269A5C7B2D654F3DC4B76363A892080"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_54A379E2E2E1F362246176392C3957EA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -385,6 +385,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -401,6 +417,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -552,26 +576,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1BBF19769656477F97D6CAD77F381E0B"
-            {
-            "SourcePath" = "8:C:\\Users\\fortiz\\Documents\\Manual de usuario - EBFRAGATA.pdf"
-            "TargetName" = "8:Manual de usuario - EBFRAGATA.pdf"
-            "Tag" = "8:"
-            "Folder" = "8:_82693B0B1E104AAB95D46012F7749EE2"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2BC4FC3F815E2C2F849A1E19EF11FD7C"
@@ -1141,6 +1145,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB8A6B5DE9E44BA1AA34897864600599"
+            {
+            "SourcePath" = "8:C:\\Users\\fortiz\\OneDrive - GBM Corporacion\\Personal\\UTC\\C12022\\PPI\\ENTREGA FINAL\\MANUAL DE USUARIO.pdf"
+            "TargetName" = "8:Manual de usuario - EBFRAGATA.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_82693B0B1E104AAB95D46012F7749EE2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -1209,7 +1233,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:EBF"
         "ProductCode" = "8:{9898907F-C126-4580-8709-BD64EB0C8DB1}"
-        "PackageCode" = "8:{AC4B012F-5EF1-4152-A6DD-C05897BE3ED7}"
+        "PackageCode" = "8:{756167EE-2699-488C-9F4A-68D572034E39}"
         "UpgradeCode" = "8:{E0999A9E-0DE7-46E6-94C0-8DDC51FCD19A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
