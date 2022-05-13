@@ -630,7 +630,6 @@ namespace WinFormsApp
             // 
             // dtIngreso
             // 
-            this.dtIngreso.Enabled = false;
             this.dtIngreso.Location = new System.Drawing.Point(6, 130);
             this.dtIngreso.Name = "dtIngreso";
             this.dtIngreso.Size = new System.Drawing.Size(261, 20);
